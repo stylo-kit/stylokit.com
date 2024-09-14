@@ -1,22 +1,22 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-async function getTemplateRoutes() {
-  const { data } = await axios.get('https://admin.stylokit.com/api/templates')
-  return data.data.map((template: any) => `/templates/${template.slug}`)
-}
+// async function getTemplateRoutes() {
+//   const { data } = await axios.get('https://admin.stylokit.com/api/templates')
+//   return data.data.map((template: any) => `/templates/${template.slug}`)
+// }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  hooks: {
-    async 'nitro:config'(nitroConfig) {
-      if (nitroConfig.dev) return
+  // hooks: {
+  //   async 'nitro:config'(nitroConfig) {
+  //     if (nitroConfig.dev) return
 
-      let slugs = await getTemplateRoutes();
-      nitroConfig.prerender.routes.push(...slugs);
-      return
-    },
-  },
+  //     let slugs = await getTemplateRoutes();
+  //     nitroConfig.prerender.routes.push(...slugs);
+  //     return
+  //   },
+  // },
   routeRules: {
     "/templates/**": { prerender: true },
     "/blog/**": { prerender: true }
@@ -41,9 +41,9 @@ export default defineNuxtConfig({
       apiBase: 'https://admin.stylokit.com/api'
     }
   },
-  // gtag: {
-  //   id: 'G-H4Z2ETZ3JF'
-  // }
+  gtag: {
+    id: 'G-KG5CCDHTBM'
+  },
   carousel: {
     prefix: 'Slideshow'
   },
