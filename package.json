@@ -11,6 +11,7 @@
     "prodgen": "nuxt generate ./../output/"
   },
   "dependencies": {
+    "@nuxtjs/google-fonts": "^3.2.0",
     "axios": "^1.7.5",
     "nuxt": "^3.12.3",
     "nuxt-gtag": "^2.0.6",

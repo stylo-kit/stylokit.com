@@ -30,7 +30,7 @@ useSeoMeta(template.value.data.meta);
 
         <div class="flex flex-row gap-[12px] items-end justify-end">
           <Button @click="navigateTo(template.data.previewLink, {external: true})" variant="gray" size="md" :rounded="false"><Icon name="heroicons:eye" /> Preview</Button>
-          <Button @click="navigateTo(template.data.purchaseLink, {external: true})" variant="neo-green" size="md" :rounded="false">Purchase for ${{ template.data.price }}</Button>
+          <Button @click="navigateTo(template.data.purchaseLink, {external: true})" variant="neo-green" size="md" :rounded="false">Purchase for {{ template.data.price == 0 ? 'Free' : '$' + template.data.price }}</Button>
         </div>
       </div>
 

@@ -23,7 +23,19 @@ export default defineNuxtConfig({
   },
   ssr: true,
   css: ['~/assets/css/main.css'],
-  modules: ['nuxt-icon', 'nuxt-headlessui', 'nuxt-gtag', "vue3-carousel-nuxt"],
+  modules: [
+    'nuxt-icon',
+    'nuxt-headlessui',
+    'nuxt-gtag',
+    "vue3-carousel-nuxt",
+    '@nuxtjs/google-fonts'
+  ],
+  googleFonts: {
+    families: {
+      Roboto: true,
+      InstrumentSans: true
+    }
+  },
   headlessui: {
     prefix: 'Headless'
   },

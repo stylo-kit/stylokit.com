@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 html {
-  font-family: "SF Pro Display Regular", "SF Pro Display Regular Placeholder", "-apple-system", "BlinkMacSystemFont", sans-serif;
+  font-family: "Instrument Sans", "Roboto", "SF Pro Display Regular", "SF Pro Display Regular Placeholder", "-apple-system", "BlinkMacSystemFont", sans-serif;
 }
 
 :root {
