@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row w-full h-screen bg-primary">
+  <div class="flex flex-col lg:flex-row w-full h-screen bg-zing-950">
     <NuxtLoadingIndicator />
 
     <HeadlessTransitionRoot as="template" :show="sidebarOpen">
@@ -44,8 +44,10 @@
     </div>
 
     <div class="grow lg:overflow-y-auto p-2 pl-2 lg:pl-0 pt-14 lg:pt-2">
-      <div class="pt-[24px] pr-[16px] pb-[16px] pl-[16px] md:pt-[32px] md:pr-[32px] md:pb-[16px] md:pl-[32px] lg:pt-[32px] lg:pr-[32px] lg:pb-[32px] lg:pl-[32px] min-h-full bg-zing-800">
-        <NuxtPage />
+      <div class="pt-[24px] pr-[16px] pb-[16px] pl-[16px] md:pt-[32px] md:pr-[32px] md:pb-[16px] md:pl-[32px] lg:pt-[32px] lg:pr-[32px] lg:pb-[32px] lg:pl-[32px] min-h-full bg-zing-800 rounded-r">
+        <div class="max-w-[1280px] mx-auto">
+          <NuxtPage />
+        </div>
       </div>
     </div>
 
@@ -69,7 +71,7 @@ useHead({
     class: 'scroll-smooth focus:scroll-auto'
   },
   bodyAttrs: {
-    class: 'bg-primary'
+    class: 'bg-zing-950'
   }
 });
 

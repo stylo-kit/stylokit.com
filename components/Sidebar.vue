@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-full pl-[8px] py-[8px] overflow-hidden">
-    <aside class="flex flex-col justify-between h-full overflow-x-hidden overflow-y-auto lg:w-52 xl:w-72 flex-shrink-0 bg-zing-950 border border-zing-800 border-r-none">
+    <aside class="flex flex-col justify-between h-full overflow-x-hidden overflow-y-auto lg:w-52 xl:w-72 flex-shrink-0 bg-zing-950 border border-zing-800 border-r-none rounded-l">
       <SidebarBody>
         <NuxtLink to="/" class="px-[16px] pt-[28px] pb-[0px]">
           <LogoBrand />
@@ -10,9 +10,9 @@
           <div class="flex flex-col gap-4">
             <div class="heading-6 text-zing-500 px-[24px]">Pages</div>
             <SidebarMenu>
-              <DevOnly>
+              <!-- <DevOnly>
                 <MenuItem to="/test" icon="heroicons:document">Test</MenuItem>
-              </DevOnly>
+              </DevOnly> -->
               <MenuItem to="/" icon="heroicons:home">Explore</MenuItem>
               <MenuItem to="/all-access" icon="heroicons:tag">All Access</MenuItem>
               <MenuItem to="/affiliate" icon="heroicons:currency-dollar">Affiliate</MenuItem>

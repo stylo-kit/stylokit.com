@@ -41,10 +41,10 @@
 </script>
 
 <template>
-  <NuxtLink :to="to" @click="sidebarOpen = false" class="relative flex flex-row items-center group overflow-hidden transition-all border-l-2" :class="itemClass">
+  <NuxtLink :to="to" @click="sidebarOpen = false" class="h-[24px] relative flex flex-row items-center group overflow-hidden transition-all border-l-2" :class="itemClass">
     <div class="relative w-full gap-[12px] px-[24px] flex flex-row items-center rounded">
       <Icon :name="icon" size="20px" :class="iconClass" />
-      <span class="body-2" :class="textClass"><slot /></span>
+      <span class="body-2 font-normal" :class="textClass"><slot /></span>
     </div>
     <!-- <div v-show="active" class="absolute h-full w-px left-0 opacity-100" style="background: linear-gradient(180deg, rgba(162, 228, 53, 0) 0%, rgb(255, 72, 0) 49.82638888888889%, rgba(162, 228, 53, 0) 100%);"></div> -->
     <!-- <div v-show="active" class="absolute h-2 w-2 left-0 my-auto bg-brand-4 opacity-100" style="filter: blur(20px);"></div> -->

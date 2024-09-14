@@ -17,7 +17,6 @@ useSeoMeta(template.value.data.meta);
       <NuxtLink to="/" class="text-zing-500 body-2 hover:text-white">Home</NuxtLink>
       <Icon name="heroicons:chevron-right" size="16px" class="text-zing-500" />
       <span class="text-zing-400 body-2">{{ template.data.name }}</span>
-      <!-- <NuxtLink :to="'/templates/' + slug" class="text-zing-400 body-2 hover:text-white">{{ template.data.name }}</NuxtLink> -->
     </div>
 
     <!-- Header -->
@@ -38,7 +37,9 @@ useSeoMeta(template.value.data.meta);
         <ClientOnly>
           <SlideshowCarousel :items-to-show="1.5" :touchDrag="true" :mouseDrag="true" :autoplay="3000" :wrapAround="true" :transition="500">
             <SlideshowSlide v-for="(img, index) in template.data.gallery"  :key="index">
-              <img :src="img.imageUrl" :alt="img.caption" class="w-[700px] h-[475px] object-cover object-center rounded-lg">
+              <div class="p-2">
+                <img :src="img.imageUrl" :alt="img.caption" class="w-[700px] h-[475px] object-cover object-center rounded-lg">
+              </div>
             </SlideshowSlide>
 
             <template #addons>
