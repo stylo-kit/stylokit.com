@@ -16,7 +16,8 @@ useSeoMeta(template.value.data.meta);
     <div class="flex flex-row gap-[8px] items-center justify-start">
       <NuxtLink to="/" class="text-zing-500 body-2 hover:text-white">Home</NuxtLink>
       <Icon name="heroicons:chevron-right" size="16px" class="text-zing-500" />
-      <NuxtLink :to="'/templates/' + slug" class="text-zing-400 body-2 hover:text-white">{{ template.data.name }}</NuxtLink>
+      <span class="text-zing-400 body-2">{{ template.data.name }}</span>
+      <!-- <NuxtLink :to="'/templates/' + slug" class="text-zing-400 body-2 hover:text-white">{{ template.data.name }}</NuxtLink> -->
     </div>
 
     <!-- Header -->
