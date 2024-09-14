@@ -154,6 +154,11 @@
     line-height: 100%;
     font-weight: 400;
   }
+  .body {
+    font-size: 15px;
+    line-height: 140%;
+    font-weight: 400;
+  }
 
   /* Rich Text */
   .rich-text {
