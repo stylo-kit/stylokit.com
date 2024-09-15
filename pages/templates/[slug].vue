@@ -105,5 +105,8 @@ useSeoMeta(template.value.data.meta);
       <SectionHeading to="/" buttonText="Browse all">Similar products</SectionHeading>
       <TemplateGrid :items="relatedTemplates.data" />
     </section>
+
+    <!-- Footer -->
+    <PageFooter />
   </main>
 </template>

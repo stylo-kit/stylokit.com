@@ -5,9 +5,9 @@
     </div>
 
     <div class="flex flex-row w-auto gap-4">
-      <NuxtLink to="/terms" class="text-zing-500 hover:text-white transition body-2">Terms of Use</NuxtLink>
-      <NuxtLink to="/privacy" class="text-zing-500 hover:text-white transition body-2">Privacy Policy</NuxtLink>
-      <NuxtLink to="/license" class="text-zing-500 hover:text-white transition body-2">License</NuxtLink>
+      <NuxtLink to="/terms" class="text-zing-500 hover:text-white transition body-2" activeClass="text-white">Terms of Use</NuxtLink>
+      <NuxtLink to="/privacy" class="text-zing-500 hover:text-white transition body-2" activeClass="text-white">Privacy Policy</NuxtLink>
+      <NuxtLink to="/license" class="text-zing-500 hover:text-white transition body-2" activeClass="text-white">License</NuxtLink>
     </div>
   </footer>
 </template>
