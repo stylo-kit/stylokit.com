@@ -10,7 +10,7 @@
 
         <div class="fixed inset-0 flex">
           <HeadlessTransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="-translate-x-full">
-            <HeadlessDialogPanel class="relative mr-16 flex w-full max-w-[280px] flex-1">
+            <HeadlessDialogPanel class="relative mr-16 flex w-fullflex-1">
               <HeadlessTransitionChild as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
                 <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
                   <button type="button" class="-m-1.5 w-8 h-8 flex items-center justify-center p-1.5 text-primary hover:bg-hover rounded" @click="sidebarOpen = false">
@@ -20,7 +20,7 @@
                 </div>
               </HeadlessTransitionChild>
               <!-- Sidebar component, swap this element with another sidebar if you like -->
-              <div class="max-w-[280px] flex grow flex-col overflow-y-auto bg-primary border-r border-alpha-5">
+              <div class="flex grow flex-col overflow-y-auto bg-primary border-r border-alpha-5">
                 <Sidebar />
               </div>
             </HeadlessDialogPanel>

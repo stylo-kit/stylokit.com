@@ -1,6 +1,6 @@
 <template>
-  <div class="flex h-full pl-[8px] py-[8px] overflow-hidden max-w-[280px]">
-    <aside class="flex flex-col justify-between h-full overflow-x-hidden overflow-y-auto lg:w-52 xl:w-72 flex-shrink-0 bg-zing-950 border border-zing-800 border-r-none rounded-l max-w-[280px]">
+  <div class="flex h-full pl-[8px] py-[8px] overflow-hidden">
+    <aside class="flex flex-col justify-between h-full overflow-x-hidden overflow-y-auto flex-shrink-0 bg-zing-950 border border-zing-800 border-r-none rounded-l w-[280px]">
       <SidebarBody>
         <NuxtLink to="/" class="px-[16px] pt-[28px] pb-[0px]">
           <LogoBrand />
