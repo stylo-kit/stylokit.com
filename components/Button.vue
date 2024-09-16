@@ -63,7 +63,7 @@ const buttonClass = ref({
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.30), 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 .button-gray-shadow {
-  box-shadow: inset 0 1px 0 0 rgba(25, 255, 255, 0.10), 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px;
 }
 .button-neo-green-shadow {
   box-shadow: inset 0 1px 0 0 rgba(25, 255, 255, 0.30), 0 1px 2px 0 rgba(0, 0, 0, 0.25);
