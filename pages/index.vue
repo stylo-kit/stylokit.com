@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import type { Template } from "~/types";
 
+  const hash = useRoute().hash;
+  console.log(hash);
   const { data: framerTemplates, status: framerTemplatesStatus } =
     await useAPI<{ data: Template[] }>("/categories/framer/templates");
   const { data: nuxtTemplates, status: nuxtTemplatesStatus } = await useAPI<{
@@ -33,7 +35,7 @@
     <Divider />
 
     <ClientOnly>
-      <HeadlessTabGroup>
+      <HeadlessTabGroup :default-index="hash == '#framer' ? 0 : hash == '#nuxt' ? 1 : 2">
         <HeadlessTabList
           class="flex flex-row gap-[8px]"
           v-slot="{ selectedIndex }"

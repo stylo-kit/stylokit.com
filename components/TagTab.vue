@@ -25,21 +25,21 @@ const tagClass = computed(() => {
 
 const iconClass = computed(() => {
   return {
-    'text-zing-50 group-hover:text-zing-100 transition': !props.active,
+    'text-zing-400 group-hover:text-zing-100 transition': !props.active,
     'text-zing-100': props.active,
   }
 });
 
 const textClass = computed(() => {
   return {
-    'text-zing-50 group-hover:text-zing-100 transition': !props.active,
+    'text-zing-400 font-regular group-hover:text-zing-100 transition': !props.active,
     'text-zing-100': props.active,
   }
 });
 </script>
 
 <template>
-  <HeadlessTab as="button" class="flex flex-row items-center justify-center flex-nowrap gap-[8px] py-[8px] px-[16px] overflow-hidden group relative transition rounded-md outline-none" :class="tagClass">
+  <HeadlessTab as="a" :href="'#' + label.toLowerCase()" class="flex flex-row items-center justify-center flex-nowrap gap-[8px] py-[8px] px-[16px] overflow-hidden group relative transition rounded-md outline-none" :class="tagClass">
     <Icon v-if="icon" :name="icon" size="18px" :class="iconClass" />
     <span class="body-2" :class="textClass">{{ label }}</span>
   </HeadlessTab>
