@@ -4,45 +4,57 @@
     to: {
       required: false,
       type: String,
-      default: '#',
+      default: "#",
     },
     icon: {
       required: false,
       type: String,
-      default: '#',
+      default: "#",
     },
   });
-  
+
   const active = computed(() => {
-    return (props.to.startsWith('http://') || props.to.startsWith('https://')) ? false : route.path == props.to;
+    return props.to.startsWith("http://") || props.to.startsWith("https://")
+      ? false
+      : route.path == props.to;
   });
   const itemClass = computed(() => {
     return {
-      'border-transparent hover:border-zing-600': !active.value,
-      'border-white': active.value,
+      "border-transparent hover:border-zing-600": !active.value,
+      "border-white": active.value,
     };
   });
-  
+
   const iconClass = computed(() => {
     return {
-      'icon-primary group-hover:text-secondary': !active.value,
-      'text-secondary': active.value,
+      "icon-primary group-hover:text-secondary": !active.value,
+      "text-secondary": active.value,
     };
   });
-  
+
   const textClass = computed(() => {
     return {
-      'text-tertiary group-hover:text-primary': !active.value,
-      'text-primary': active.value,
+      "text-tertiary group-hover:text-primary": !active.value,
+      "text-primary": active.value,
     };
   });
-  
-  const sidebarOpen = useState<boolean>('sidebarOpen');
+
+  const sidebarOpen = useState<boolean>("sidebarOpen");
 </script>
 
 <template>
-  <NuxtLink :to="to" @click="sidebarOpen = false" class="h-[24px] relative flex flex-row items-center group overflow-hidden transition-all border-l-2" :class="itemClass">
-    <div class="relative w-full gap-[12px] px-[24px] flex flex-row items-center rounded">
+  <NuxtLink
+    :to="to"
+    :target="
+      to.startsWith('http://') || to.startsWith('https://') ? '_blank' : '_self'
+    "
+    @click="sidebarOpen = false"
+    class="h-[24px] relative flex flex-row items-center group overflow-hidden transition-all border-l-2"
+    :class="itemClass"
+  >
+    <div
+      class="relative w-full gap-[12px] px-[24px] flex flex-row items-center rounded"
+    >
       <Icon :name="icon" size="20px" :class="iconClass" />
       <span class="body-2 font-normal" :class="textClass"><slot /></span>
     </div>

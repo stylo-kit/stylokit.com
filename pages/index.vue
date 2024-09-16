@@ -17,7 +17,12 @@
       <h1 class="heading-3 text-primary">Explore</h1>
       <div class="flex flex-row gap-3">
         <Button
-          @click="navigateTo('/all-access')"
+          @click="
+            navigateTo(
+              'https://stylokit.lemonsqueezy.com/buy/2a2d90e2-5830-4644-8129-ab79d47cf89e',
+              { external: true, open: { target: '_blank' } }
+            )
+          "
           variant="neo-green"
           :rounded="false"
           >All Access - $499</Button
