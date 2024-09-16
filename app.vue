@@ -1,3 +1,33 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+useSeoMeta({
+  title: 'Stylokit - Premium Framer Templates',
+  ogTitle: 'Stylokit - Premium Framer Templates',
+  description: 'Accelerate your web development with our expertly designed Framer and Nuxt templates at Stylokit. Stand out from the competition with unique, customizable designs that are built to enhance efficiency and creativity.',
+  ogDescription: 'Accelerate your web development with our expertly designed Framer and Nuxt templates at Stylokit. Stand out from the competition with unique, customizable designs that are built to enhance efficiency and creativity.',
+  ogImage: '/og-image.jpg',
+  twitterCard: 'summary_large_image',
+});
+
+useHead({
+  link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+  htmlAttrs: {
+    class: 'scroll-smooth focus:scroll-auto'
+  },
+  bodyAttrs: {
+    class: 'bg-zing-950'
+  }
+});
+
+const searchDialogOpen = ref(false);
+const sidebarOpen = useState<boolean>('sidebarOpen', () => false);
+const route = useRoute();
+const isTemplateRoute = ref<boolean>(false);
+
+watch(() => route.path, () => isTemplateRoute.value = route.path.startsWith('/templates/') ? true : false);
+</script>
+
 <template>
   <div class="flex flex-col lg:flex-row w-full h-screen bg-zing-950">
     <NuxtLoadingIndicator />
@@ -43,7 +73,14 @@
       </button>
     </div>
 
-    <div class="grow lg:overflow-y-auto p-2 pl-2 lg:pl-0 pt-14 lg:pt-2">
+    <template v-if="isTemplateRoute">
+      <div class="grow lg:overflow-y-auto p-2 pl-2 lg:pl-0 pt-14 lg:pt-2">
+        <div class="min-h-full bg-zing-800 rounded-r">
+          <NuxtPage />
+        </div>
+      </div>
+    </template>
+    <div v-else class="grow lg:overflow-y-auto p-2 pl-2 lg:pl-0 pt-14 lg:pt-2">
       <div class="pt-[24px] pr-[16px] pb-[16px] pl-[16px] md:pt-[32px] md:pr-[32px] md:pb-[16px] md:pl-[32px] lg:pt-[32px] lg:pr-[32px] lg:pb-[32px] lg:pl-[32px] min-h-full bg-zing-800 rounded-r">
         <div class="max-w-[1280px] mx-auto">
           <NuxtPage />
@@ -54,27 +91,3 @@
     <SearchDialog v-model="searchDialogOpen" />
   </div>
 </template>
-
-<script setup lang="ts">
-useSeoMeta({
-  title: 'Stylokit - Premium Framer Templates',
-  ogTitle: 'Stylokit - Premium Framer Templates',
-  description: 'Accelerate your web development with our expertly designed Framer and Nuxt templates at Stylokit. Stand out from the competition with unique, customizable designs that are built to enhance efficiency and creativity.',
-  ogDescription: 'Accelerate your web development with our expertly designed Framer and Nuxt templates at Stylokit. Stand out from the competition with unique, customizable designs that are built to enhance efficiency and creativity.',
-  ogImage: '/og-image.jpg',
-  twitterCard: 'summary_large_image',
-});
-
-useHead({
-  link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-  htmlAttrs: {
-    class: 'scroll-smooth focus:scroll-auto'
-  },
-  bodyAttrs: {
-    class: 'bg-zing-950'
-  }
-});
-
-const searchDialogOpen = ref(false);
-const sidebarOpen = useState<boolean>('sidebarOpen', () => false);
-</script>
