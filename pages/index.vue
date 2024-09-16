@@ -35,7 +35,7 @@
     <Divider />
 
     <ClientOnly>
-      <HeadlessTabGroup :default-index="hash == '#framer' ? 0 : hash == '#nuxt' ? 1 : 2">
+      <HeadlessTabGroup :default-index="hash == '#framer' ? 0 : hash == '#nuxt' ? 1 : hash == '#ui kit' ? 2 : 0">
         <HeadlessTabList
           class="flex flex-row gap-[8px]"
           v-slot="{ selectedIndex }"
