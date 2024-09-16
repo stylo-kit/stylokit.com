@@ -38,7 +38,7 @@ useSeoMeta(template.value.data.meta);
           <SlideshowCarousel :items-to-show="1.5" :touchDrag="true" :mouseDrag="true" :autoplay="3000" :wrapAround="true" :transition="500">
             <SlideshowSlide v-for="(img, index) in template.data.gallery"  :key="index">
               <div class="p-2">
-                <img :src="img.imageUrl" :alt="img.caption" class="w-[700px] h-[475px] object-cover object-center rounded-lg">
+                <img :src="img.imageUrl" :alt="img.caption" class="w-[700px] h-[475px] object-cover object-center rounded-lg border border-white/[.08]">
               </div>
             </SlideshowSlide>
 

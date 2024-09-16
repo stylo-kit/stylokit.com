@@ -1,0 +1,23 @@
+/* Variables */
+:root {
+  --vc-nav-width: 40px;
+  --vc-nav-height: 40px;
+  --vc-icn-width: 30px;
+  --vc-icn-height: 30px;
+  --vc-nav-border-radius: 999px;
+  --vc-nav-background: rgba(0, 0, 0, 0.5);
+  --vc-nav-color: rgba(255, 255, 255, 1);
+  --vc-nav-color-hover: rgba(255, 255, 255, 1);
+  --vc-pgn-background-color: rgba(255, 255, 255, 0.3);
+  --vc-pgn-active-color: rgba(255, 255, 255, 1);
+  --vc-pgn-border-radius: 0px;
+}
+
+.carousel__prev, .carousel__next {
+  opacity: 0;
+  transition: opacity .325s ease-in-out;
+}
+.carousel:hover .carousel__prev,
+.carousel:hover .carousel__next {
+  opacity: 1;
+}

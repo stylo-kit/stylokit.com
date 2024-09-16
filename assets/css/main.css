@@ -1,5 +1,6 @@
 @import './animations.css';
 @import './style.css';
+@import './carousel.css';
 
 @tailwind base;
 @tailwind components;
