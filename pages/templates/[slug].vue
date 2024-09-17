@@ -107,8 +107,8 @@
             },
             1536: {
               itemsToShow: 3,
-              snalAlign: 'center'
-            }
+              snalAlign: 'center',
+            },
           }"
           :touchDrag="true"
           :mouseDrag="true"
@@ -140,9 +140,9 @@
     <div class="mx-auto max-w-[1280px]">
       <PageContainer>
         <!-- Body -->
-        <div class="flex flex-row justify-between gap-[64px]">
+        <div class="flex flex-row justify-between gap-[64px] items-start">
           <article
-            class="prose prose-invert prose-sm max-w-[720px]"
+            class="prose prose-invert prose-sm max-w-[720px] prose-p:text-zing-400 prose-p:text-[16px]"
             v-html="templateHtml"
           ></article>
 
@@ -277,6 +277,8 @@
           >
           <TemplateGrid :items="relatedTemplates.data" />
         </section>
+
+        <Divider />
 
         <!-- Footer -->
         <PageFooter />
