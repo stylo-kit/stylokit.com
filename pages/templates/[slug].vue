@@ -24,66 +24,68 @@
 
 <template>
   <main v-if="template">
-    <PageContainer>
-      <!-- Breadcrumbs -->
-      <div class="flex flex-row gap-[8px] items-center justify-start">
-        <NuxtLink to="/" class="text-zing-500 body-2 hover:text-white"
-          >Home</NuxtLink
-        >
-        <Icon
-          name="heroicons:chevron-right"
-          size="16px"
-          class="text-zing-500"
-        />
-        <span class="text-zing-400 body-2">{{ template.data.name }}</span>
-      </div>
-
-      <!-- Header -->
-      <div class="flex flex-col gap-[56px]">
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-col gap-[16px]">
-            <h1 class="heading-1 text-white">{{ template.data.name }}</h1>
-            <p class="text-zing-400 body-1 max-w-[480px]">
-              {{ template.data.desc }}
-            </p>
-          </div>
-
-          <div class="flex flex-row gap-[12px] items-end justify-end">
-            <Button
-              @click="
-                navigateTo(template.data.previewLink, {
-                  external: true,
-                  open: {
-                    target: '_blank',
-                  },
-                })
-              "
-              variant="gray"
-              size="md"
-              :rounded="false"
-              ><Icon name="heroicons:eye" /> Preview</Button
-            >
-            <Button
-              @click="
-                navigateTo(template.data.purchaseLink, {
-                  external: true,
-                  open: {
-                    target: '_blank',
-                  },
-                })
-              "
-              variant="neo-green"
-              size="md"
-              :rounded="false"
-              >Purchase for
-              {{
-                template.data.price == 0 ? "Free" : "$" + template.data.price
-              }}</Button
-            >
+    <div class="mx-auto max-w-[1280px]">
+      <PageContainer>
+        <!-- Breadcrumbs -->
+        <div class="flex flex-row gap-[8px] items-center justify-start">
+          <NuxtLink to="/" class="text-zing-500 body-2 hover:text-white"
+            >Home</NuxtLink
+          >
+          <Icon
+            name="heroicons:chevron-right"
+            size="16px"
+            class="text-zing-500"
+          />
+          <span class="text-zing-400 body-2">{{ template.data.name }}</span>
+        </div>
+  
+        <!-- Header -->
+        <div class="flex flex-col gap-[56px]">
+          <div class="flex flex-row justify-between">
+            <div class="flex flex-col gap-[16px]">
+              <h1 class="heading-1 text-white">{{ template.data.name }}</h1>
+              <p class="text-zing-400 body-1 max-w-[480px]">
+                {{ template.data.desc }}
+              </p>
+            </div>
+  
+            <div class="flex flex-row gap-[12px] items-end justify-end">
+              <Button
+                @click="
+                  navigateTo(template.data.previewLink, {
+                    external: true,
+                    open: {
+                      target: '_blank',
+                    },
+                  })
+                "
+                variant="gray"
+                size="md"
+                :rounded="false"
+                ><Icon name="heroicons:eye" /> Preview</Button
+              >
+              <Button
+                @click="
+                  navigateTo(template.data.purchaseLink, {
+                    external: true,
+                    open: {
+                      target: '_blank',
+                    },
+                  })
+                "
+                variant="neo-green"
+                size="md"
+                :rounded="false"
+                >Purchase for
+                {{
+                  template.data.price == 0 ? "Free" : "$" + template.data.price
+                }}</Button
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </PageContainer>
+      </PageContainer>
+    </div>
 
     <!-- Slider -->
     <div class="w-full flex flex-row flex-nowrap overflow-hidden mt-[12px]">
@@ -130,6 +132,8 @@
         </SlideshowCarousel>
       </ClientOnly>
     </div>
+
+    <div class="mx-auto max-w-[1280px]">
 
     <PageContainer>
       <!-- Body -->
@@ -274,5 +278,6 @@
       <!-- Footer -->
       <PageFooter />
     </PageContainer>
+    </div>
   </main>
 </template>
