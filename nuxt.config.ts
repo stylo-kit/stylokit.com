@@ -18,10 +18,11 @@ export default defineNuxtConfig({
   //   },
   // },
   routeRules: {
-    "/templates/**": { prerender: true },
+    '/**': { isr: 60 },
+    "/templates/**": { isr: true },
     "/blog/**": { prerender: true }
   },
-  ssr: true,
+  // ssr: true,
   css: ['~/assets/css/main.css'],
   modules: [
     'nuxt-headlessui',

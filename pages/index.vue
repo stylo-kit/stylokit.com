@@ -2,8 +2,6 @@
   import type { Template } from "~/types";
   const runtimeConfig = useRuntimeConfig();
 
-  console.log(runtimeConfig.public.apiBase);
-
   interface ResponseInt {
     data: Template[];
   }
