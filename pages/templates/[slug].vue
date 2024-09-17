@@ -74,7 +74,7 @@
     </PageContainer>
 
     <!-- Slider -->
-    <div class="flex flex-row flex-nowrap overflow-hidden mt-[12px]">
+    <div class="w-full flex flex-row flex-nowrap overflow-hidden mt-[12px]">
       <ClientOnly>
         <SlideshowCarousel
           :items-to-show="1"
@@ -84,11 +84,11 @@
               snapAlign: 'center'
             },
             1024: {
-              itemsToShow: 2.3,
+              itemsToShow: 1.5,
               snapAlign: 'center'
             },
             1280: {
-              itemsToShow: 2.5,
+              itemsToShow: 1.7,
               snapAlign: 'center'
             }
           }"
@@ -106,7 +106,7 @@
               <img
                 :src="img.imageUrl"
                 :alt="img.caption"
-                class="w-auto h-[475px] object-cover object-center rounded-lg border border-white/[.08]"
+                class="object-cover object-center rounded-lg border border-white/[.08]"
               />
             </div>
           </SlideshowSlide>
