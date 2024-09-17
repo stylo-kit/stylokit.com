@@ -1,16 +1,24 @@
 <script setup lang="ts">
   import type { Template } from "~/types";
+  const runtimeConfig = useRuntimeConfig();
+
+  interface ResponseInt {
+    data: Template[];
+  }
 
   const hash = useRoute().hash;
-  console.log(hash);
   const { data: framerTemplates, status: framerTemplatesStatus } =
-    await useAPI<{ data: Template[] }>("/categories/framer/templates");
-  const { data: nuxtTemplates, status: nuxtTemplatesStatus } = await useAPI<{
-    data: Template[];
-  }>("/categories/nuxt/templates");
-  const { data: figmaTemplates, status: figmaTemplatesStatus } = await useAPI<{
-    data: Template[];
-  }>("/categories/figma/templates");
+    await useLazyAsyncData<ResponseInt>("framerTemplates", () =>
+      $fetch(runtimeConfig.public.apiBase + "/categories/framer/templates")
+    );
+  const { data: nuxtTemplates, status: nuxtTemplatesStatus } =
+    await useLazyAsyncData<ResponseInt>("nuxtTemplates", () =>
+      $fetch(runtimeConfig.public.apiBase + "/categories/nuxt/templates")
+    );
+  const { data: figmaTemplates, status: figmaTemplatesStatus } =
+    await useLazyAsyncData<ResponseInt>("figmaTemplates", () =>
+      $fetch(runtimeConfig.public.apiBase + "/categories/figma/templates")
+    );
 </script>
 
 <template>
@@ -35,7 +43,17 @@
     <Divider />
 
     <ClientOnly>
-      <HeadlessTabGroup :default-index="hash == '#framer' ? 0 : hash == '#nuxt' ? 1 : hash == '#ui kit' ? 2 : 0">
+      <HeadlessTabGroup
+        :default-index="
+          hash == '#framer'
+            ? 0
+            : hash == '#nuxt'
+            ? 1
+            : hash == '#ui kit'
+            ? 2
+            : 0
+        "
+      >
         <HeadlessTabList
           class="flex flex-row gap-[8px]"
           v-slot="{ selectedIndex }"
@@ -60,19 +78,19 @@
         <HeadlessTabPanels>
           <HeadlessTabPanel>
             <TemplateGrid
-              :items="framerTemplates.data"
+              :items="framerTemplates?.data || []"
               :loading="framerTemplatesStatus == 'pending'"
             />
           </HeadlessTabPanel>
           <HeadlessTabPanel>
             <TemplateGrid
-              :items="nuxtTemplates.data"
+              :items="nuxtTemplates?.data || []"
               :loading="nuxtTemplatesStatus == 'pending'"
             />
           </HeadlessTabPanel>
           <HeadlessTabPanel>
             <TemplateGrid
-              :items="figmaTemplates.data"
+              :items="figmaTemplates?.data || []"
               :loading="figmaTemplatesStatus == 'pending'"
             />
           </HeadlessTabPanel>
