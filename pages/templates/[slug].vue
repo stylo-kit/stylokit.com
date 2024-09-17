@@ -8,7 +8,7 @@
     "template__" + slug,
     () => $fetch(runtimeConfig.public.apiBase + "/templates/" + slug)
   );
-  const { data: relatedTemplates } = await useLazyAsyncData<{
+  const { data: relatedTemplates } = await useAsyncData<{
     data: Template[];
   }>("relatedTemplates", () =>
     $fetch(runtimeConfig.public.apiBase + "/templates/" + slug + "/related")

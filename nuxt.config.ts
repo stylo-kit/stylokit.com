@@ -17,11 +17,11 @@ export default defineNuxtConfig({
   //     return
   //   },
   // },
-  routeRules: {
-    '/**': { isr: 60 },
-    "/templates/**": { isr: true },
-    "/blog/**": { prerender: true }
-  },
+  // routeRules: {
+  //   '/**': { isr: 60 },
+  //   "/templates/**": { isr: true },
+  //   "/blog/**": { isr: false }
+  // },
   // ssr: true,
   css: ['~/assets/css/main.css'],
   modules: [
@@ -57,15 +57,15 @@ export default defineNuxtConfig({
   gtag: {
     id: 'G-KG5CCDHTBM'
   },
-  icon: {
-    serverBundle: 'auto',
-    clientBundle: {
-      scan: {
-        // note that when you specify those values, the default behavior will be overridden
-        globInclude: ['components/**/*.vue', /* ... */],
-      }
-    }
-  },
+  // icon: {
+  //   serverBundle: 'local',
+  //   clientBundle: {
+  //     scan: {
+  //       // note that when you specify those values, the default behavior will be overridden
+  //       globInclude: ['components/**/*.vue', /* ... */],
+  //     }
+  //   }
+  // },
   carousel: {
     prefix: 'Slideshow'
   },
