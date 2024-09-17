@@ -7,12 +7,16 @@
     <Divider />
 
     <section class="flex flex-col pt-4 gap-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card 
-          v-for="item in articles.data"
+      <div
+        v-if="status == 'success'"
+        class="grid grid-cols-1 md:grid-cols-4 gap-6"
+      >
+        <Card
+          v-for="item in articles?.data"
           :key="item.id"
           :title="item.title"
-          :desc="item.subtitle">
+          :desc="item.desc"
+        >
         </Card>
       </div>
     </section>
@@ -24,7 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Article } from '~/types';
+  import type { Article } from "~/types";
+  const runtimeConfig = useRuntimeConfig();
 
-const { data: articles } = await useAPI<{data: Article[]}>('/articles');
+  const { data: articles, status } = await useAsyncData<{ data: Article[] }>(
+    "articles",
+    () => $fetch(runtimeConfig.public.apiBase + "/articles")
+  );
 </script>
