@@ -1,31 +1,43 @@
 <script setup lang="ts">
   import type { Template } from "~/types";
+  const runtimeConfig = useRuntimeConfig();
 
   const route = useRoute();
   const slug = route.params.slug;
-  const { data: template } = await useAPI<{ data: Template }>(
-    "/templates/" + slug
+  const { data: template } = await useAsyncData<{ data: Template }>(
+    "template__" + slug,
+    () => $fetch(runtimeConfig.public.apiBase + "/templates/" + slug)
   );
-  const { data: relatedTemplates } = await useAPI<{ data: Template[] }>(
-    "/templates/" + slug + "/related"
+  const { data: relatedTemplates } = await useLazyAsyncData<{
+    data: Template[];
+  }>("relatedTemplates", () =>
+    $fetch(runtimeConfig.public.apiBase + "/templates/" + slug + "/related")
   );
-  const { data: templateHtml } = await useAPI("/templates/" + slug + "/html");
+  const { data: templateHtml } = await useAsyncData(
+    "templateHtml__" + slug,
+    () => $fetch(runtimeConfig.public.apiBase + "/templates/" + slug + "/html")
+  );
 
-  useSeoMeta(template.value.data.meta);
+  // useSeoMeta(template.value.data.meta);
+  useSeoMeta(template.value?.data.meta || {});
 </script>
 
 <template>
-  <main>
+  <main v-if="template">
     <PageContainer>
       <!-- Breadcrumbs -->
       <div class="flex flex-row gap-[8px] items-center justify-start">
         <NuxtLink to="/" class="text-zing-500 body-2 hover:text-white"
           >Home</NuxtLink
         >
-        <Icon name="heroicons:chevron-right" size="16px" class="text-zing-500" />
+        <Icon
+          name="heroicons:chevron-right"
+          size="16px"
+          class="text-zing-500"
+        />
         <span class="text-zing-400 body-2">{{ template.data.name }}</span>
       </div>
-  
+
       <!-- Header -->
       <div class="flex flex-col gap-[56px]">
         <div class="flex flex-row justify-between">
@@ -35,7 +47,7 @@
               {{ template.data.desc }}
             </p>
           </div>
-  
+
           <div class="flex flex-row gap-[12px] items-end justify-end">
             <Button
               @click="
@@ -81,16 +93,16 @@
           :breakpoints="{
             768: {
               itemsToShow: 1.3,
-              snapAlign: 'center'
+              snapAlign: 'center',
             },
             1024: {
               itemsToShow: 1.5,
-              snapAlign: 'center'
+              snapAlign: 'center',
             },
             1280: {
               itemsToShow: 1.7,
-              snapAlign: 'center'
-            }
+              snapAlign: 'center',
+            },
           }"
           :touchDrag="true"
           :mouseDrag="true"
@@ -126,7 +138,7 @@
           class="prose prose-invert prose-sm max-w-[720px]"
           v-html="templateHtml"
         ></article>
-  
+
         <div
           class="flex flex-col gap-[32px] w-[280px] p-[24px] rounded-lg bg-gray-750 border border-white/[.05]"
         >
@@ -145,7 +157,7 @@
               >
             </div>
           </div>
-  
+
           <div
             v-if="template.data.stats.length > 0"
             class="flex flex-col gap-[12px]"
@@ -161,7 +173,7 @@
               </li>
             </ul>
           </div>
-  
+
           <div
             v-if="template.data.formats.length > 0"
             class="flex flex-col gap-[12px]"
@@ -192,7 +204,7 @@
               </div>
             </div>
           </div>
-  
+
           <div
             v-if="template.data.category == 'framer'"
             class="flex flex-col gap-[12px]"
@@ -222,7 +234,7 @@
               </li>
             </ul>
           </div>
-  
+
           <div
             v-if="template.data.category == 'nuxt'"
             class="flex flex-col gap-[12px]"
@@ -247,15 +259,18 @@
           </div>
         </div>
       </div>
-  
+
       <!-- Related -->
-      <section class="flex flex-col pt-[64px] pb-[32px] gap-[16px]">
+      <section
+        v-if="relatedTemplates?.data"
+        class="flex flex-col pt-[64px] pb-[32px] gap-[16px]"
+      >
         <SectionHeading to="/" buttonText="Browse all"
           >Similar products</SectionHeading
         >
         <TemplateGrid :items="relatedTemplates.data" />
       </section>
-  
+
       <!-- Footer -->
       <PageFooter />
     </PageContainer>
