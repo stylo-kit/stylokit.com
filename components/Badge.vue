@@ -19,7 +19,7 @@ const props = defineProps({
 });
 
 const badgeClass = ref({
-  'py-0.5 px-2.5 rounded-full heading-6 font-regular': props.size == 'sm' && props.variant != 'square',
+  'pt-[5px] pb-[3px] px-[8px] rounded-full heading-7 font-medium': props.size == 'sm' && props.variant != 'square',
   'py-1 px-2 rounded-full body-4 font-semibold': props.size == 'xs' && props.variant != 'square',
   'py-1 px-4 rounded-none body-2 bg-brand-4 text-primary': props.variant == 'square',
   'badge-brand-fill border border-brand-5 text-brand-5': props.variant == 'brand',

@@ -27,15 +27,15 @@
 
   const iconClass = computed(() => {
     return {
-      "icon-primary group-hover:text-secondary": !active.value,
-      "text-secondary": active.value,
+      "text-zing-500 group-hover:text-zing-200": !active.value,
+      "text-zing-200": active.value,
     };
   });
 
   const textClass = computed(() => {
     return {
-      "text-tertiary group-hover:text-primary": !active.value,
-      "text-primary": active.value,
+      "text-zing-400 group-hover:text-zing-200": !active.value,
+      "text-zing-200": active.value,
     };
   });
 

@@ -23,7 +23,7 @@
           <Divider />
   
           <div class="flex flex-col gap-4">
-            <div class="heading-6 text-placeholder px-[24px]">Connect</div>
+            <div class="heading-6 text-zing-500 px-[24px]">Connect</div>
             <SidebarMenu>
               <MenuItem to="https://twitter.com/Dmytri_Design" icon="tabler:brand-x">Connect on X</MenuItem>
             </SidebarMenu>
