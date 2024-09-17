@@ -38,7 +38,7 @@
           />
           <span class="text-zing-400 body-2">{{ template.data.name }}</span>
         </div>
-  
+
         <!-- Header -->
         <div class="flex flex-col gap-[56px]">
           <div class="flex flex-row justify-between">
@@ -48,7 +48,7 @@
                 {{ template.data.desc }}
               </p>
             </div>
-  
+
             <div class="flex flex-row gap-[12px] items-end justify-end">
               <Button
                 @click="
@@ -105,6 +105,10 @@
               itemsToShow: 1.7,
               snapAlign: 'center',
             },
+            1536: {
+              itemsToShow: 3,
+              snalAlign: 'center'
+            }
           }"
           :touchDrag="true"
           :mouseDrag="true"
@@ -134,150 +138,149 @@
     </div>
 
     <div class="mx-auto max-w-[1280px]">
-
-    <PageContainer>
-      <!-- Body -->
-      <div class="flex flex-row justify-between gap-[64px]">
-        <article
-          class="prose prose-invert prose-sm max-w-[720px]"
-          v-html="templateHtml"
-        ></article>
-
-        <div
-          class="flex flex-col gap-[32px] w-[280px] p-[24px] rounded-lg bg-gray-750 border border-white/[.05]"
-        >
-          <div
-            v-if="template.data.pages.length > 0"
-            class="flex flex-col gap-[12px]"
-          >
-            <h6 class="heading-6 text-white">Pages</h6>
-            <div class="flex flex-row flex-wrap gap-[10px]">
-              <Badge
-                v-for="(page, index) in template.data.pages"
-                :key="index"
-                :variant="index == 0 ? 'neo' : 'gray'"
-                size="sm"
-                >{{ page }}</Badge
-              >
-            </div>
-          </div>
+      <PageContainer>
+        <!-- Body -->
+        <div class="flex flex-row justify-between gap-[64px]">
+          <article
+            class="prose prose-invert prose-sm max-w-[720px]"
+            v-html="templateHtml"
+          ></article>
 
           <div
-            v-if="template.data.stats.length > 0"
-            class="flex flex-col gap-[12px]"
+            class="flex flex-col gap-[32px] w-[280px] p-[24px] rounded-lg bg-gray-750 border border-white/[.05]"
           >
-            <h6 class="heading-6 text-white">Stats</h6>
-            <ul class="flex flex-col list-disc list-inside gap-[8px]">
-              <li
-                v-for="(stat, index) in template.data.stats"
-                :key="index"
-                class="text-zing-400 body-2"
-              >
-                {{ stat }}
-              </li>
-            </ul>
-          </div>
-
-          <div
-            v-if="template.data.formats.length > 0"
-            class="flex flex-col gap-[12px]"
-          >
-            <h6 class="heading-6 text-white">Format</h6>
-            <div class="flex flex-row gap-[8px]">
-              <div
-                v-for="(format, index) in template.data.formats"
-                class="flex items-center justify-center rounded-full bg-black p-[6px]"
-                :key="index"
-                :title="format"
-              >
-                <Icon
-                  v-if="format == 'framer'"
-                  name="tabler:brand-framer"
-                  size="20px"
-                />
-                <Icon
-                  v-else-if="format == 'nuxt'"
-                  name="tabler:brand-nuxt"
-                  size="20px"
-                />
-                <Icon
-                  v-else-if="format == 'figma'"
-                  name="tabler:brand-figma"
-                  size="20px"
-                />
+            <div
+              v-if="template.data.pages.length > 0"
+              class="flex flex-col gap-[12px]"
+            >
+              <h6 class="heading-6 text-white">Pages</h6>
+              <div class="flex flex-row flex-wrap gap-[10px]">
+                <Badge
+                  v-for="(page, index) in template.data.pages"
+                  :key="index"
+                  :variant="index == 0 ? 'neo' : 'gray'"
+                  size="sm"
+                  >{{ page }}</Badge
+                >
               </div>
             </div>
-          </div>
 
-          <div
-            v-if="template.data.category == 'framer'"
-            class="flex flex-col gap-[12px]"
-          >
-            <h6 class="heading-6 text-white">Support</h6>
-            <ul class="flex flex-col list-disc list-inside gap-[8px]">
-              <li class="text-zing-400">
-                <NuxtLink
-                  to="https://www.framer.community/c/support/"
-                  class="text-zing-400 body-2 hover:text-white"
-                  >Get help from the community</NuxtLink
+            <div
+              v-if="template.data.stats.length > 0"
+              class="flex flex-col gap-[12px]"
+            >
+              <h6 class="heading-6 text-white">Stats</h6>
+              <ul class="flex flex-col list-disc list-inside gap-[8px]">
+                <li
+                  v-for="(stat, index) in template.data.stats"
+                  :key="index"
+                  class="text-zing-400 body-2"
                 >
-              </li>
-              <li class="text-zing-400">
-                <NuxtLink
-                  to="https://www.framer.community/c/requests/"
-                  class="text-zing-400 body-2 hover:text-white"
-                  >Feature Requests</NuxtLink
-                >
-              </li>
-              <li class="text-zing-400">
-                <NuxtLink
-                  to="https://www.framer.community/home"
-                  class="text-zing-400 body-2 hover:text-white"
-                  >Framer Community</NuxtLink
-                >
-              </li>
-            </ul>
-          </div>
+                  {{ stat }}
+                </li>
+              </ul>
+            </div>
 
-          <div
-            v-if="template.data.category == 'nuxt'"
-            class="flex flex-col gap-[12px]"
-          >
-            <h6 class="heading-6 text-white">Support</h6>
-            <ul class="flex flex-col list-disc list-inside gap-[8px]">
-              <li class="text-zing-400">
-                <NuxtLink
-                  to="https://github.com/nuxt"
-                  class="text-zing-400 body-2 hover:text-white"
-                  >Nuxt on Github</NuxtLink
+            <div
+              v-if="template.data.formats.length > 0"
+              class="flex flex-col gap-[12px]"
+            >
+              <h6 class="heading-6 text-white">Format</h6>
+              <div class="flex flex-row gap-[8px]">
+                <div
+                  v-for="(format, index) in template.data.formats"
+                  class="flex items-center justify-center rounded-full bg-black p-[6px]"
+                  :key="index"
+                  :title="format"
                 >
-              </li>
-              <li class="text-zing-400">
-                <NuxtLink
-                  to="https://nuxters.nuxt.com/"
-                  class="text-zing-400 body-2 hover:text-white"
-                  >Nuxters</NuxtLink
-                >
-              </li>
-            </ul>
+                  <Icon
+                    v-if="format == 'framer'"
+                    name="tabler:brand-framer"
+                    size="20px"
+                  />
+                  <Icon
+                    v-else-if="format == 'nuxt'"
+                    name="tabler:brand-nuxt"
+                    size="20px"
+                  />
+                  <Icon
+                    v-else-if="format == 'figma'"
+                    name="tabler:brand-figma"
+                    size="20px"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              v-if="template.data.category == 'framer'"
+              class="flex flex-col gap-[12px]"
+            >
+              <h6 class="heading-6 text-white">Support</h6>
+              <ul class="flex flex-col list-disc list-inside gap-[8px]">
+                <li class="text-zing-400">
+                  <NuxtLink
+                    to="https://www.framer.community/c/support/"
+                    class="text-zing-400 body-2 hover:text-white"
+                    >Get help from the community</NuxtLink
+                  >
+                </li>
+                <li class="text-zing-400">
+                  <NuxtLink
+                    to="https://www.framer.community/c/requests/"
+                    class="text-zing-400 body-2 hover:text-white"
+                    >Feature Requests</NuxtLink
+                  >
+                </li>
+                <li class="text-zing-400">
+                  <NuxtLink
+                    to="https://www.framer.community/home"
+                    class="text-zing-400 body-2 hover:text-white"
+                    >Framer Community</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div
+              v-if="template.data.category == 'nuxt'"
+              class="flex flex-col gap-[12px]"
+            >
+              <h6 class="heading-6 text-white">Support</h6>
+              <ul class="flex flex-col list-disc list-inside gap-[8px]">
+                <li class="text-zing-400">
+                  <NuxtLink
+                    to="https://github.com/nuxt"
+                    class="text-zing-400 body-2 hover:text-white"
+                    >Nuxt on Github</NuxtLink
+                  >
+                </li>
+                <li class="text-zing-400">
+                  <NuxtLink
+                    to="https://nuxters.nuxt.com/"
+                    class="text-zing-400 body-2 hover:text-white"
+                    >Nuxters</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Related -->
-      <section
-        v-if="relatedTemplates?.data"
-        class="flex flex-col pt-[64px] pb-[32px] gap-[16px]"
-      >
-        <SectionHeading to="/" buttonText="Browse all"
-          >Similar products</SectionHeading
+        <!-- Related -->
+        <section
+          v-if="relatedTemplates?.data"
+          class="flex flex-col pt-[64px] pb-[32px] gap-[16px]"
         >
-        <TemplateGrid :items="relatedTemplates.data" />
-      </section>
+          <SectionHeading to="/" buttonText="Browse all"
+            >Similar products</SectionHeading
+          >
+          <TemplateGrid :items="relatedTemplates.data" />
+        </section>
 
-      <!-- Footer -->
-      <PageFooter />
-    </PageContainer>
+        <!-- Footer -->
+        <PageFooter />
+      </PageContainer>
     </div>
   </main>
 </template>
