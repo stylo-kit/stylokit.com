@@ -25,6 +25,10 @@ const sidebarOpen = useState<boolean>('sidebarOpen', () => false);
 const route = useRoute();
 const isTemplateRoute = ref<boolean>(false);
 
+onMounted(() => {
+  isTemplateRoute.value = route.path.startsWith('/templates/') ? true : false;
+});
+
 watch(() => route.path, () => isTemplateRoute.value = route.path.startsWith('/templates/') ? true : false);
 </script>
 
@@ -75,7 +79,7 @@ watch(() => route.path, () => isTemplateRoute.value = route.path.startsWith('/te
 
     <template v-if="isTemplateRoute">
       <div class="grow lg:overflow-y-auto p-2 pl-2 lg:pl-0 pt-14 lg:pt-2">
-        <div class="min-h-full bg-zing-800 rounded-r">
+        <div class="min-h-full w-full grow bg-zing-800 rounded-r">
           <NuxtPage />
         </div>
       </div>

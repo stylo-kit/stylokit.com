@@ -74,10 +74,24 @@
     </PageContainer>
 
     <!-- Slider -->
-    <div class="flex flex-row flex-nowrap overflow-hidden">
+    <div class="flex flex-row flex-nowrap overflow-hidden mt-[12px]">
       <ClientOnly>
         <SlideshowCarousel
-          :items-to-show="1.5"
+          :items-to-show="1"
+          :breakpoints="{
+            768: {
+              itemsToShow: 1.3,
+              snapAlign: 'center'
+            },
+            1024: {
+              itemsToShow: 2.3,
+              snapAlign: 'center'
+            },
+            1280: {
+              itemsToShow: 2.5,
+              snapAlign: 'center'
+            }
+          }"
           :touchDrag="true"
           :mouseDrag="true"
           :autoplay="3000"
@@ -88,11 +102,11 @@
             v-for="(img, index) in template.data.gallery"
             :key="index"
           >
-            <div class="p-2">
+            <div class="px-[12px]">
               <img
                 :src="img.imageUrl"
                 :alt="img.caption"
-                class="w-[700px] h-[475px] object-cover object-center rounded-lg border border-white/[.08]"
+                class="w-auto h-[475px] object-cover object-center rounded-lg border border-white/[.08]"
               />
             </div>
           </SlideshowSlide>
