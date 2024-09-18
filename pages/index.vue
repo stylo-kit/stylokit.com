@@ -22,7 +22,7 @@
 </script>
 
 <template>
-  <main class="flex flex-col gap-[32px] px-[32px]">
+  <main class="flex flex-col gap-[32px] md:px-[32px]">
     <header class="flex flex-row justify-between">
       <h1 class="heading-3 text-primary">Explore</h1>
       <div class="flex flex-row gap-3">

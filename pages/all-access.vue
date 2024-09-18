@@ -34,7 +34,7 @@
 </script>
 
 <template>
-  <main class="flex flex-col gap-[32px] px-[32px]">
+  <main class="flex flex-col gap-[32px] md:px-[32px]">
     <section
       class="flex flex-col justify-center gap-[56px] pt-[64px] pb-[32px]"
     >

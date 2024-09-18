@@ -41,7 +41,7 @@
 
         <!-- Header -->
         <div class="flex flex-col gap-[56px]">
-          <div class="flex flex-row justify-between">
+          <div class="flex flex-col md:flex-row justify-between gap-[48px]">
             <div class="flex flex-col gap-[16px]">
               <h1 class="heading-1 text-white">{{ template.data.name }}</h1>
               <p class="text-zing-400 body-1 max-w-[480px]">
@@ -49,7 +49,7 @@
               </p>
             </div>
 
-            <div class="flex flex-row gap-[12px] items-end justify-end">
+            <div class="flex flex-col md:flex-row gap-[12px] md:items-end md:justify-end">
               <Button
                 @click="
                   navigateTo(template.data.previewLink, {
@@ -140,14 +140,14 @@
     <div class="mx-auto max-w-[1280px]">
       <PageContainer>
         <!-- Body -->
-        <div class="flex flex-row justify-between gap-[64px] items-start">
+        <div class="flex flex-col md:flex-row justify-between gap-[64px] md:items-start">
           <article
-            class="prose prose-invert prose-sm max-w-[720px] prose-p:text-zing-400 prose-p:text-[16px]"
+            class="w-auto prose prose-invert prose-sm max-w-[720px] prose-p:text-zing-400 prose-p:text-[16px]"
             v-html="templateHtml"
           ></article>
 
           <div
-            class="flex flex-col gap-[32px] w-[280px] p-[24px] rounded-lg bg-gray-750 border border-white/[.05]"
+            class="flex flex-col gap-[32px] min-w-[280px] sm:max-w-[280px] p-[24px] rounded-lg bg-gray-750 border border-white/[.05]"
           >
             <div
               v-if="template.data.pages.length > 0"

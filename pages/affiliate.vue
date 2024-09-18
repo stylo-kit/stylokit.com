@@ -20,8 +20,8 @@
 </script>
 
 <template>
-  <main class="flex flex-col gap-[32px] px-[32px]">
-    <section class="flex flex-col py-[32px] gap-[64px]">
+  <main class="flex flex-col gap-[32px] md:px-[32px]">
+    <section class="flex flex-col md:py-[32px] gap-[64px]">
       <div
         class="flex flex-col gap-[32px] p-[32px] justify-center items-center bg-gray-750 border-t border-white/[.08] rounded-lg"
       >
