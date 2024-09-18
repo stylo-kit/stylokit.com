@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   //   "/templates/**": { isr: true },
   //   "/blog/**": { isr: false }
   // },
-  // ssr: true,
+  ssr: false,
   css: ['~/assets/css/main.css'],
   modules: [
     'nuxt-headlessui',
