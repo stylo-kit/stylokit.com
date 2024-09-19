@@ -1,27 +1,34 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 // async function getTemplateRoutes() {
 //   const { data } = await axios.get('https://admin.stylokit.com/api/templates')
 //   return data.data.map((template: any) => `/templates/${template.slug}`)
 // }
 
+const getTemplateRoutes = async () => {
+  const response = await axios.get(
+    'https://admin.stylokit.com/api/templates'
+  );
+  // return the array of routes
+  return response?.data?.data.map((template: any) => `/templates/${template.slug}`);
+};
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  // hooks: {
-  //   async 'nitro:config'(nitroConfig) {
-  //     if (nitroConfig.dev) return
-
-  //     let slugs = await getTemplateRoutes();
-  //     nitroConfig.prerender.routes.push(...slugs);
-  //     return
-  //   },
-  // },
-  // routeRules: {
-  //   '/**': { isr: 60 },
-  //   "/templates/**": { isr: true },
-  //   "/blog/**": { isr: false }
-  // },
+  hooks: {
+    async 'nitro:config'(nitroConfig) {
+      // fetch the routes from our function above
+      const slugs = await getTemplateRoutes();
+      // add the routes to the nitro config
+      nitroConfig.prerender.routes.push(...slugs);
+    },
+  },
+  routeRules: {
+    // '/**': { isr: 60 },
+    "/templates/**": { prerender: true },
+    // "/blog/**": { isr: false }
+  },
   ssr: false,
   css: ['~/assets/css/main.css'],
   modules: [
