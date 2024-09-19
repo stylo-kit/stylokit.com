@@ -31,5 +31,5 @@
 
 <script setup lang="ts">
 const submitDialogOpen = ref(false);
-const { data: premiums } = await useAsyncData(() => $fetch('/api/websites?tag=premium'));
+const { data: premiums } = await useLazyAsyncData(() => $fetch('/api/websites?tag=premium'));
 </script>

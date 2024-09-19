@@ -30,5 +30,5 @@
 
 <script setup lang="ts">
 const submitDialogOpen = ref(false);
-const { data: inspirations } = await useAsyncData(() => $fetch('/api/websites?tag=inspiration'));
+const { data: inspirations } = await useLazyAsyncData(() => $fetch('/api/websites?tag=inspiration'));
 </script>

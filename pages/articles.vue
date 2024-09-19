@@ -31,7 +31,7 @@
   import type { Article } from "~/types";
   const runtimeConfig = useRuntimeConfig();
 
-  const { data: articles, status } = await useAsyncData<{ data: Article[] }>(
+  const { data: articles, status } = await useLazyAsyncData<{ data: Article[] }>(
     "articles",
     () => $fetch(runtimeConfig.public.apiBase + "/articles")
   );

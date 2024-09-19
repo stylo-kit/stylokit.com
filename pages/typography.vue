@@ -30,5 +30,5 @@
 
 <script setup lang="ts">
 const submitDialogOpen = ref(false);
-const { data: typography } = await useAsyncData(() => $fetch('/api/websites?tag=typography'));
+const { data: typography } = await useLazyAsyncData(() => $fetch('/api/websites?tag=typography'));
 </script>

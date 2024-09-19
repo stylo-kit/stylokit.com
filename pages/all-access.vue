@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { Plan } from "~/types";
   const runtimeConfig = useRuntimeConfig();
-  const { data: plans, status } = await useAsyncData<{ data: Plan[] }>(
+  const { data: plans, status } = await useLazyAsyncData<{ data: Plan[] }>(
     "plans",
     () => $fetch(runtimeConfig.public.apiBase + "/plans")
   );

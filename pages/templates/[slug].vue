@@ -4,16 +4,16 @@
 
   const route = useRoute();
   const slug = route.params.slug;
-  const { data: template } = await useAsyncData<{ data: Template }>(
+  const { data: template } = await useLazyAsyncData<{ data: Template }>(
     "template__" + slug,
     () => $fetch(runtimeConfig.public.apiBase + "/templates/" + slug)
   );
-  const { data: relatedTemplates } = await useAsyncData<{
+  const { data: relatedTemplates } = await useLazyAsyncData<{
     data: Template[];
   }>("relatedTemplates", () =>
     $fetch(runtimeConfig.public.apiBase + "/templates/" + slug + "/related")
   );
-  const { data: templateHtml } = await useAsyncData(
+  const { data: templateHtml } = await useLazyAsyncData(
     "templateHtml__" + slug,
     () => $fetch(runtimeConfig.public.apiBase + "/templates/" + slug + "/html")
   );

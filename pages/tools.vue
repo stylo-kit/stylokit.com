@@ -29,5 +29,5 @@
 
 <script setup lang="ts">
 const submitDialogOpen = ref(false);
-const { data: designtools } = await useAsyncData(() => $fetch('/api/websites?tag=designtool'));
+const { data: designtools } = await useLazyAsyncData(() => $fetch('/api/websites?tag=designtool'));
 </script>

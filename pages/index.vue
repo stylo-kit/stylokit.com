@@ -8,15 +8,15 @@
 
   const hash = useRoute().hash;
   const { data: framerTemplates, status: framerTemplatesStatus } =
-    await useAsyncData<ResponseInt>("framerTemplates", () =>
+    await useLazyAsyncData<ResponseInt>("framerTemplates", () =>
       $fetch(runtimeConfig.public.apiBase + "/categories/framer/templates")
     );
   const { data: nuxtTemplates, status: nuxtTemplatesStatus } =
-    await useAsyncData<ResponseInt>("nuxtTemplates", () =>
+    await useLazyAsyncData<ResponseInt>("nuxtTemplates", () =>
       $fetch(runtimeConfig.public.apiBase + "/categories/nuxt/templates")
     );
   const { data: figmaTemplates, status: figmaTemplatesStatus } =
-    await useAsyncData<ResponseInt>("figmaTemplates", () =>
+    await useLazyAsyncData<ResponseInt>("figmaTemplates", () =>
       $fetch(runtimeConfig.public.apiBase + "/categories/figma/templates")
     );
 </script>
