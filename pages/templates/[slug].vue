@@ -278,9 +278,8 @@
           <TemplateGrid :items="relatedTemplates.data" />
         </section>
 
-        <Divider />
+        <Divider class="mt-[44px]" />
 
-        <!-- Footer -->
         <PageFooter />
       </PageContainer>
     </div>

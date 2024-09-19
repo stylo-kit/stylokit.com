@@ -66,7 +66,7 @@
       </div>
     </section>
 
-    <Divider />
+    <Divider class="mt-[44px]" />
 
     <PageFooter />
   </main>

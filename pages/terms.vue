@@ -88,6 +88,8 @@
       </article>
     </div>
 
+    <Divider class="mt-[44px]" />
+
     <PageFooter />
   </div>
 </template>
