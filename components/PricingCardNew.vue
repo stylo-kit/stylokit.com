@@ -31,6 +31,18 @@
       type: String,
     },
   });
+
+  function numberWithCommas(x: number) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  const priceFormatted = computed(() => {
+    return numberWithCommas(props.price);
+  });
+
+  const discountPriceFormatted = computed(() => {
+    return numberWithCommas(props.discountPrice || 0);
+  })
 </script>
 
 <template>
@@ -100,7 +112,7 @@
               variant == 'enterprise' ? 'text-neo-green-950' : 'text-white',
             ]"
           >
-            ${{ discountPrice || price }}
+            ${{ discountPrice == 0 ? priceFormatted : discountPriceFormatted }}
           </h2>
           <h4
             v-if="discountPrice"
@@ -109,7 +121,7 @@
               variant == 'enterprise' ? 'text-neo-green-950' : 'text-zing-600',
             ]"
           >
-            ${{ price }}
+            ${{ priceFormatted }}
           </h4>
         </div>
 
