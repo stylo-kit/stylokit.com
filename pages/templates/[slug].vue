@@ -31,11 +31,9 @@
           <NuxtLink to="/" class="text-zing-500 body-2 hover:text-white"
             >Home</NuxtLink
           >
-          <Icon
-            name="heroicons:chevron-right"
-            size="16px"
-            class="text-zing-500"
-          />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[16px] text-zing-500">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
           <span class="text-zing-400 body-2">{{ template.data.name }}</span>
         </div>
 
@@ -49,7 +47,9 @@
               </p>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-[12px] md:items-end md:justify-end">
+            <div
+              class="flex flex-col md:flex-row gap-[12px] md:items-end md:justify-end"
+            >
               <Button
                 @click="
                   navigateTo(template.data.previewLink, {
@@ -62,7 +62,26 @@
                 variant="gray"
                 size="md"
                 :rounded="false"
-                ><Icon name="heroicons:eye" /> Preview</Button
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+                Preview</Button
               >
               <Button
                 @click="
@@ -140,7 +159,9 @@
     <div class="mx-auto max-w-[1280px]">
       <PageContainer>
         <!-- Body -->
-        <div class="flex flex-col md:flex-row justify-between gap-[64px] md:items-start">
+        <div
+          class="flex flex-col md:flex-row justify-between gap-[64px] md:items-start"
+        >
           <article
             class="w-auto prose prose-invert prose-sm max-w-[720px] prose-p:text-zing-400 prose-p:text-[16px]"
             v-html="templateHtml"
@@ -193,21 +214,21 @@
                   :key="index"
                   :title="format"
                 >
-                  <Icon
-                    v-if="format == 'framer'"
-                    name="tabler:brand-framer"
-                    size="20px"
-                  />
-                  <Icon
-                    v-else-if="format == 'nuxt'"
-                    name="tabler:brand-nuxt"
-                    size="20px"
-                  />
-                  <Icon
-                    v-else-if="format == 'figma'"
-                    name="tabler:brand-figma"
-                    size="20px"
-                  />
+                  <svg v-if="format == 'framer'" xmlns="http://www.w3.org/2000/svg" class="size-[20px]" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6 15h12l-12 -12h12v6h-12v6l6 6v-6" />
+                  </svg>
+                  <svg v-else-if="format == 'nuxt'" xmlns="http://www.w3.org/2000/svg" class="size-[20px]" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12.146 8.583l-1.3 -2.09a1.046 1.046 0 0 0 -1.786 .017l-5.91 9.908a1.046 1.046 0 0 0 .897 1.582h3.913" />
+                    <path d="M20.043 18c.743 0 1.201 -.843 .82 -1.505l-4.044 -7.013a.936 .936 0 0 0 -1.638 0l-4.043 7.013c-.382 .662 .076 1.505 .819 1.505h8.086z" />
+                  </svg>
+                  <svg v-else-if="format == 'figma'" xmlns="http://www.w3.org/2000/svg" class="size-[20px]" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z" />
+                    <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />
+                  </svg>
                 </div>
               </div>
             </div>

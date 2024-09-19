@@ -18,7 +18,9 @@
             leave="absolute transition duration-75 ease-in"
             leave-from="transform scale-100 opacity-100 translate-x-0 translate-y-0"
             leave-to="transform scale-95 opacity-0 -translate-x-4 translate-y-4">
-            <Icon name="heroicons:arrow-up-right-solid" size="20px" class="icon-hover" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[20px] icon-hover">
+              <path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd" />
+            </svg>
           </HeadlessTransitionRoot>
         </div>
       </div>

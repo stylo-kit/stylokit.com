@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     "vue3-carousel-nuxt",
     '@nuxtjs/google-fonts',
-    "@nuxt/icon"
   ],
   googleFonts: {
     families: {
@@ -57,15 +56,6 @@ export default defineNuxtConfig({
   gtag: {
     id: 'G-KG5CCDHTBM'
   },
-  // icon: {
-  //   serverBundle: 'local',
-  //   clientBundle: {
-  //     scan: {
-  //       // note that when you specify those values, the default behavior will be overridden
-  //       globInclude: ['components/**/*.vue', /* ... */],
-  //     }
-  //   }
-  // },
   carousel: {
     prefix: 'Slideshow'
   },

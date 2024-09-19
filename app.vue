@@ -49,7 +49,9 @@ watch(() => route.path, () => isTemplateRoute.value = route.path.startsWith('/te
                 <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
                   <button type="button" class="-m-1.5 w-8 h-8 flex items-center justify-center p-1.5 text-primary hover:bg-hover rounded" @click="sidebarOpen = false">
                     <span class="sr-only">Close sidebar</span>
-                    <Icon name="heroicons:x-mark-solid" size="20px" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[20px]">
+                      <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                    </svg>
                   </button>
                 </div>
               </HeadlessTransitionChild>
@@ -73,7 +75,9 @@ watch(() => route.path, () => isTemplateRoute.value = route.path.startsWith('/te
       </NuxtLink>
       <button type="button" class="ml-auto w-8 h-8 flex items-center justify-center text-primary hover:bg-hover rounded" @click="sidebarOpen = true">
         <span class="sr-only">Open sidebar</span>
-        <Icon name="heroicons:bars-2-solid" size="20px" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[20px]">
+          <path fill-rule="evenodd" d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+        </svg>
       </button>
     </div>
 

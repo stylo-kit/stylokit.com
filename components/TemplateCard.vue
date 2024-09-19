@@ -17,7 +17,9 @@ defineProps({
           target: '_blank'
         }
       })" class="flex items-center justify-center p-[6px] rounded-md template-card-icon-button-bg absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-        <Icon name="heroicons:arrow-up-right" size="20px" class="text-white font-regular" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[20px] text-white font-regular">
+          <path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd" />
+        </svg>
       </div>
     </div>
     <div class="flex flex-col gap-[2px]">

@@ -23,7 +23,9 @@
           leave="transition duration-75 ease-in"
           leave-from="transform scale-100 opacity-100 translate-x-0"
           leave-to="transform scale-95 opacity-0 -translate-x-8">
-          <Icon name="heroicons:chevron-right-solid" size="16px" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[16px]">
+            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+          </svg>
         </HeadlessTransitionChild>
       </button>
     </HeadlessTransitionRoot>
