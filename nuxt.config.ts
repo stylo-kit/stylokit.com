@@ -42,4 +42,9 @@ export default defineNuxtConfig({
     prefix: "Slideshow",
   },
   compatibilityDate: "2024-09-13",
+  content: {
+    markdown: {
+      anchorLinks: false,
+    },
+  },
 });

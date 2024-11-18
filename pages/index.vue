@@ -1,10 +1,6 @@
 <script setup lang="ts">
   import type { Template } from "~/types";
 
-  interface ResponseInt {
-    data: Template[];
-  }
-
   const hash = useRoute().hash;
 </script>
 
@@ -65,29 +61,35 @@
         <HeadlessTabPanels>
           <HeadlessTabPanel>
             <ContentList
-              :query="{ path: '/templates', where: [{ type: 'framer' }] }"
+              :query="{
+                path: '/templates',
+                where: [{ type: 'framer' }],
+              }"
+              v-slot="{ list }"
             >
-              <template #default="{ list }">
-                <TemplateGrid :items="list" />
-              </template>
+              <TemplateGrid :items="list.reverse()" />
             </ContentList>
           </HeadlessTabPanel>
           <HeadlessTabPanel>
             <ContentList
-              :query="{ path: '/templates', where: [{ type: 'nuxt' }] }"
+              :query="{
+                path: '/templates',
+                where: [{ type: 'nuxt' }],
+              }"
+              v-slot="{ list }"
             >
-              <template #default="{ list }">
-                <TemplateGrid :items="list" />
-              </template>
+              <TemplateGrid :items="list.reverse()" />
             </ContentList>
           </HeadlessTabPanel>
           <HeadlessTabPanel>
             <ContentList
-              :query="{ path: '/templates', where: [{ type: 'ui-kit' }] }"
+              :query="{
+                path: '/templates',
+                where: [{ type: 'ui-kit' }],
+              }"
+              v-slot="{ list }"
             >
-              <template #default="{ list }">
-                <TemplateGrid :items="list" />
-              </template>
+              <TemplateGrid :items="list.reverse()" />
             </ContentList>
           </HeadlessTabPanel>
         </HeadlessTabPanels>
