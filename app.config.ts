@@ -27,11 +27,11 @@ export default defineAppConfig({
             icon: "heroicons:currency-dollar",
             to: "/affiliate",
           },
-          // {
-          //   title: "Blog",
-          //   icon: "heroicons:pencil",
-          //   to: "/blog",
-          // },
+          {
+            title: "Blog",
+            icon: "heroicons:pencil",
+            to: "/blog",
+          },
         ],
       },
       {
@@ -74,6 +74,15 @@ export default defineAppConfig({
         text: "Get Started",
         link: "https://www.framer.com/?via=dmytri_design",
       },
+    },
+  },
+
+  blog: {
+    author: {
+      name: "Dmytri Ivanov",
+      image: "/blog/profile.png",
+      link: "https://x.com/Dmytri_Design",
+      handle: "@dmytri_design",
     },
   },
 });
