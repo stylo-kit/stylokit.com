@@ -1,0 +1,38 @@
+---
+id: 10
+name: Startify
+slug: startify-framer
+type: framer
+category: framer
+desc: Startify is a comprehensive Framer Template designed specifically for startups. Our template offers tailored solutions, leveraging Framer AI technology to drive business growth and innovation.
+price: 69
+tags:
+  - NEW
+seo:
+  title: Startify - Framer Template
+  image: https://framerusercontent.com/images/cZbwLVVS20T5BJXom1LsjbSmY6c.jpg?scale-down-to=2048
+  description: Startify is a comprehensive Framer Template designed specifically for startups. Our template offers tailored solutions, leveraging Framer AI technology to drive business growth and innovation.
+pages:
+  - HOME
+  - SOLUTIONS
+  - PRICING
+  - ABOUT
+  - BLOG
+  - CONTACT
+  - HELP
+  - TERMS
+  - PRIVACY
+  - 404
+stats:
+  - 10 Pages
+  - 1 CMS-Collections
+formats:
+  - framer
+previewLink: https://startify.framer.website/
+purchaseLink: https://stylokit.lemonsqueezy.com/buy/1f84a8fa-628e-4be8-a575-7dfd54473db5
+thumbImage: https://framerusercontent.com/images/cZbwLVVS20T5BJXom1LsjbSmY6c.jpg?scale-down-to=2048
+gallery:
+  - https://framerusercontent.com/images/tPKyvnWd4Lah6xo3Y9toQSblo.jpg?scale-down-to=1024
+  - https://framerusercontent.com/images/nJN3Vz3qDFQF8ulo9TvGpouVSM.jpg?scale-down-to=1024
+  - https://framerusercontent.com/images/cXs62tNnVj4f8Q9AkFoAwCFizhY.jpg?scale-down-to=1024
+---

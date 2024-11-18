@@ -1,24 +1,11 @@
 <script setup lang="ts">
   import type { Template } from "~/types";
-  const runtimeConfig = useRuntimeConfig();
 
   interface ResponseInt {
     data: Template[];
   }
 
   const hash = useRoute().hash;
-  const { data: framerTemplates, status: framerTemplatesStatus } =
-    await useLazyAsyncData<ResponseInt>("framerTemplates", () =>
-      $fetch(runtimeConfig.public.apiBase + "/categories/framer/templates")
-    );
-  const { data: nuxtTemplates, status: nuxtTemplatesStatus } =
-    await useLazyAsyncData<ResponseInt>("nuxtTemplates", () =>
-      $fetch(runtimeConfig.public.apiBase + "/categories/nuxt/templates")
-    );
-  const { data: figmaTemplates, status: figmaTemplatesStatus } =
-    await useLazyAsyncData<ResponseInt>("figmaTemplates", () =>
-      $fetch(runtimeConfig.public.apiBase + "/categories/figma/templates")
-    );
 </script>
 
 <template>
@@ -77,22 +64,31 @@
 
         <HeadlessTabPanels>
           <HeadlessTabPanel>
-            <TemplateGrid
-              :items="framerTemplates?.data || []"
-              :loading="framerTemplatesStatus == 'pending'"
-            />
+            <ContentList
+              :query="{ path: '/templates', where: [{ type: 'framer' }] }"
+            >
+              <template #default="{ list }">
+                <TemplateGrid :items="list" />
+              </template>
+            </ContentList>
           </HeadlessTabPanel>
           <HeadlessTabPanel>
-            <TemplateGrid
-              :items="nuxtTemplates?.data || []"
-              :loading="nuxtTemplatesStatus == 'pending'"
-            />
+            <ContentList
+              :query="{ path: '/templates', where: [{ type: 'nuxt' }] }"
+            >
+              <template #default="{ list }">
+                <TemplateGrid :items="list" />
+              </template>
+            </ContentList>
           </HeadlessTabPanel>
           <HeadlessTabPanel>
-            <TemplateGrid
-              :items="figmaTemplates?.data || []"
-              :loading="figmaTemplatesStatus == 'pending'"
-            />
+            <ContentList
+              :query="{ path: '/templates', where: [{ type: 'ui-kit' }] }"
+            >
+              <template #default="{ list }">
+                <TemplateGrid :items="list" />
+              </template>
+            </ContentList>
           </HeadlessTabPanel>
         </HeadlessTabPanels>
       </HeadlessTabGroup>

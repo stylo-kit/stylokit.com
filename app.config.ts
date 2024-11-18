@@ -27,11 +27,11 @@ export default defineAppConfig({
             icon: "heroicons:currency-dollar",
             to: "/affiliate",
           },
-          {
-            title: "Blog",
-            icon: "heroicons:pencil",
-            to: "/blog",
-          },
+          // {
+          //   title: "Blog",
+          //   icon: "heroicons:pencil",
+          //   to: "/blog",
+          // },
         ],
       },
       {
