@@ -1,5 +1,3 @@
-import axios from "axios";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -11,7 +9,19 @@ export default defineNuxtConfig({
     "vue3-carousel-nuxt",
     "@nuxtjs/google-fonts",
     "@nuxt/content",
+    "@nuxthq/studio",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
   ],
+  site: {
+    url: "https://stylokit.com",
+    name: "Stylokit - Premium Framer Templates",
+  },
+  nitro: {
+    prerender: {
+      routes: ["/sitemap.xml"],
+    },
+  },
   googleFonts: {
     families: {
       Roboto: true,
@@ -29,11 +39,6 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: "page-fade", mode: "out-in" },
-  },
-  runtimeConfig: {
-    public: {
-      apiBase: "https://admin.stylokit.com/api",
-    },
   },
   gtag: {
     id: "G-KG5CCDHTBM",

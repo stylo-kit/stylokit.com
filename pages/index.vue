@@ -1,7 +1,17 @@
 <script setup lang="ts">
-  import type { Template } from "~/types";
-
   const hash = useRoute().hash;
+  const { data } = await useAsyncData("index", () =>
+    queryContent("/").findOne()
+  );
+
+  useSeoMeta({
+    title: data.value?.seo.title,
+    ogTitle: data.value?.seo.title,
+    description: data.value?.seo.description,
+    ogDescription: data.value?.seo.description,
+    ogImage: data.value?.seo.image,
+    twitterCard: "summary_large_image",
+  });
 </script>
 
 <template>
@@ -65,9 +75,13 @@
                 path: '/templates',
                 where: [{ type: 'framer' }],
               }"
-              v-slot="{ list }"
             >
-              <TemplateGrid :items="list.reverse()" />
+              <template #default="{ list }">
+                <TemplateGrid :items="list.reverse()" />
+              </template>
+              <template #not-found>
+                <p class="body-2 text-zing-400">No templates found.</p>
+              </template>
             </ContentList>
           </HeadlessTabPanel>
           <HeadlessTabPanel>
@@ -76,9 +90,13 @@
                 path: '/templates',
                 where: [{ type: 'nuxt' }],
               }"
-              v-slot="{ list }"
             >
-              <TemplateGrid :items="list.reverse()" />
+              <template #default="{ list }">
+                <TemplateGrid :items="list.reverse()" />
+              </template>
+              <template #not-found>
+                <p class="body-2 text-zing-400">No templates found.</p>
+              </template>
             </ContentList>
           </HeadlessTabPanel>
           <HeadlessTabPanel>
@@ -87,9 +105,13 @@
                 path: '/templates',
                 where: [{ type: 'ui-kit' }],
               }"
-              v-slot="{ list }"
             >
-              <TemplateGrid :items="list.reverse()" />
+              <template #default="{ list }">
+                <TemplateGrid :items="list.reverse()" />
+              </template>
+              <template #not-found>
+                <p class="body-2 text-zing-400">No templates found.</p>
+              </template>
             </ContentList>
           </HeadlessTabPanel>
         </HeadlessTabPanels>
