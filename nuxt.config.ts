@@ -17,9 +17,21 @@ export default defineNuxtConfig({
     url: "https://stylokit.com",
     name: "Stylokit - Premium Framer Templates",
   },
+  // routeRules: {
+  //   "/**": { isr: true },
+  // },
+  routeRules: {
+    "/": { prerender: true, isr: true },
+    "/license": { prerender: true, isr: true },
+    "/terms": { prerender: true, isr: true },
+    "/privacy": { prerender: true, isr: true },
+    "/all-access": { prerender: true, isr: true },
+    "/affiliate": { prerender: true, isr: true },
+  },
   nitro: {
     prerender: {
-      routes: ["/sitemap.xml"],
+      crawlLinks: true,
+      routes: ["/sitemap.xml", "/robots.txt"],
     },
   },
   googleFonts: {

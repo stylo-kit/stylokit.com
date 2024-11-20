@@ -16,11 +16,35 @@
     twitterCard: "summary_large_image",
   });
 
-  const { data: relatedTemplates } = await useAsyncData(slug + "-related", () =>
-    queryContent("/templates/")
-      .where({ id: { $ne: data.value?.id } })
-      .limit(4)
-      .find()
+  const { data: relatedTemplates } = await useAsyncData<Template[]>(
+    slug + "-related",
+    () =>
+      queryContent("/templates/")
+        .where({ id: { $ne: data.value?.id }, type: data.value?.type })
+        .limit(4)
+        .find()
+        .then((items) =>
+          items
+            .map((item) => ({
+              id: item.id,
+              name: item.name,
+              slug: item.slug,
+              type: item.type,
+              category: item.category,
+              desc: item.desc,
+              price: item.price,
+              meta: item.meta,
+              pages: item.pages,
+              tags: item.tags,
+              stats: item.stats,
+              formats: item.formats,
+              previewLink: item.previewLink,
+              purchaseLink: item.purchaseLink,
+              thumbImage: item.thumbImage,
+              gallery: item.gallery,
+            }))
+            .reverse()
+        )
   );
 </script>
 

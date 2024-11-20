@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  const hash = useRoute().hash;
   const { data } = await useAsyncData("index", () =>
     queryContent("/").findOne()
   );
@@ -35,88 +34,7 @@
 
     <Divider />
 
-    <ClientOnly>
-      <HeadlessTabGroup
-        :default-index="
-          hash == '#framer'
-            ? 0
-            : hash == '#nuxt'
-            ? 1
-            : hash == '#ui kit'
-            ? 2
-            : 0
-        "
-      >
-        <HeadlessTabList
-          class="flex flex-row gap-[8px]"
-          v-slot="{ selectedIndex }"
-        >
-          <TagTab
-            icon="tabler:brand-framer"
-            label="Framer"
-            :active="selectedIndex == 0"
-          />
-          <TagTab
-            icon="tabler:brand-nuxt"
-            label="Nuxt"
-            :active="selectedIndex == 1"
-          />
-          <TagTab
-            icon="tabler:brand-figma"
-            label="UI Kit"
-            :active="selectedIndex == 2"
-          />
-        </HeadlessTabList>
-
-        <HeadlessTabPanels>
-          <HeadlessTabPanel>
-            <ContentList
-              :query="{
-                path: '/templates',
-                where: [{ type: 'framer' }],
-              }"
-            >
-              <template #default="{ list }">
-                <TemplateGrid :items="list.reverse()" />
-              </template>
-              <template #not-found>
-                <p class="body-2 text-zing-400">No templates found.</p>
-              </template>
-            </ContentList>
-          </HeadlessTabPanel>
-          <HeadlessTabPanel>
-            <ContentList
-              :query="{
-                path: '/templates',
-                where: [{ type: 'nuxt' }],
-              }"
-            >
-              <template #default="{ list }">
-                <TemplateGrid :items="list.reverse()" />
-              </template>
-              <template #not-found>
-                <p class="body-2 text-zing-400">No templates found.</p>
-              </template>
-            </ContentList>
-          </HeadlessTabPanel>
-          <HeadlessTabPanel>
-            <ContentList
-              :query="{
-                path: '/templates',
-                where: [{ type: 'ui-kit' }],
-              }"
-            >
-              <template #default="{ list }">
-                <TemplateGrid :items="list.reverse()" />
-              </template>
-              <template #not-found>
-                <p class="body-2 text-zing-400">No templates found.</p>
-              </template>
-            </ContentList>
-          </HeadlessTabPanel>
-        </HeadlessTabPanels>
-      </HeadlessTabGroup>
-    </ClientOnly>
+    <Templates />
 
     <Divider class="mt-[44px]" />
 
