@@ -85,4 +85,10 @@ export default defineAppConfig({
       handle: "@dmytri_design",
     },
   },
+
+  blackFriday: {
+    enabled: true,
+    discount: 50,
+    code: "BF50",
+  },
 });

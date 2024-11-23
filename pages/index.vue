@@ -34,6 +34,8 @@
 
     <Divider />
 
+    <BlackFridayBanner />
+
     <Templates />
 
     <Divider class="mt-[44px]" />

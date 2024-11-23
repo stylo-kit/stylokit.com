@@ -74,6 +74,8 @@
           <span class="text-zing-400 body-2">{{ data.name }}</span>
         </div>
 
+        <BlackFridayBanner />
+
         <!-- Header -->
         <div class="flex flex-col gap-[56px]">
           <div class="flex flex-col md:flex-row justify-between gap-[48px]">
