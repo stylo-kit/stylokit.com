@@ -87,7 +87,7 @@ export default defineAppConfig({
   },
 
   blackFriday: {
-    enabled: true,
+    enabled: false,
     discount: 50,
     code: "BF50",
   },
