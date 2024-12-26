@@ -1,13 +1,13 @@
 @layer base {
   /* Background Color */
   .bg-primary {
-    background-color: rgba(15, 12, 11, 1.00);
+    background-color: rgba(15, 12, 11, 1);
   }
   .bg-hover-none {
-    background-color: rgba(28, 23, 21, 0.00);
+    background-color: rgba(28, 23, 21, 0);
   }
   .bg-hover {
-    background-color: rgba(28, 23, 21, 1.00);
+    background-color: rgba(28, 23, 21, 1);
   }
   .bg-backdrop {
     background-color: rgba(15, 12, 11, 0.8);
@@ -16,30 +16,30 @@
 
   /* Text Color */
   .text-inverse {
-    color: #0F0D0B;
+    color: #0f0d0b;
   }
   .text-primary {
-    color: #FAF9F7;
+    color: #faf9f7;
   }
   .text-secondary {
-    color: #D1CEC7;
+    color: #d1cec7;
   }
   .text-tertiary {
-    color: #ADA89F;
+    color: #ada89f;
   }
   .text-help {
-    color: #817B6F;
+    color: #817b6f;
   }
   .text-placeholder {
-    color: #5E5A4F;
+    color: #5e5a4f;
   }
 
   /* Icon Color */
   .icon-primary {
-    color: #817B6F;
+    color: #817b6f;
   }
   .icon-hover {
-    color: #817B6F;
+    color: #817b6f;
   }
 
   /* Badge Color */
@@ -56,39 +56,54 @@
     border-color: rgba(255, 98, 10, 0.24);
   }
   .badge-green-fill {
-    background-color: rgba(74, 220, 127, 0.10);
+    background-color: rgba(74, 220, 127, 0.1);
   }
   .badge-green-color {
-    color: #4ADC7F;
+    color: #4adc7f;
   }
   .badge-strong-green-fill {
-    background-color: #4ADC7F;
+    background-color: #4adc7f;
   }
   .badge-strong-green-color {
-    color: #03411C;
+    color: #03411c;
   }
   .badge-purple-fill {
-    background-color: rgba(122, 62, 234, 0.10);
+    background-color: rgba(122, 62, 234, 0.1);
   }
   .badge-neo-fill {
-    background-color: rgba(153, 179, 13, 0.10);
+    background-color: rgba(153, 179, 13, 0.1);
+  }
+  .badge-red-fill {
+    background-color: rgba(217, 39, 118, 0.1);
+  }
+  .badge-red-color {
+    color: #f372b5;
   }
 
   /* Badge Icon Color */
   .badge-icon-brand-fill {
-    background-image: linear-gradient(230deg, 
-      rgb(15, 12, 11) 6.75228%, 
-      rgba(255, 98, 10, 0.16) 50.0668%, 
-      rgb(15, 12, 11) 91.3058%);
+    background-image: linear-gradient(
+      230deg,
+      rgb(15, 12, 11) 6.75228%,
+      rgba(255, 98, 10, 0.16) 50.0668%,
+      rgb(15, 12, 11) 91.3058%
+    );
   }
   .badge-icon-gray-fill {
-    background-image: linear-gradient(230deg, 
-      rgba(15, 12, 11, 0) 6.75228%, 
-      rgb(28, 23, 21) 50.0668%, 
-      rgba(15, 12, 11, 0) 91.3058%);
+    background-image: linear-gradient(
+      230deg,
+      rgba(15, 12, 11, 0) 6.75228%,
+      rgb(28, 23, 21) 50.0668%,
+      rgba(15, 12, 11, 0) 91.3058%
+    );
   }
   .badge-icon-diamond-fill {
-    background-image: linear-gradient(230deg, rgba(15, 12, 11, 0) 6.75228%, rgba(205, 48, 1, 0.24) 50.0668%, rgba(15, 12, 11, 0) 91.3058%);
+    background-image: linear-gradient(
+      230deg,
+      rgba(15, 12, 11, 0) 6.75228%,
+      rgba(205, 48, 1, 0.24) 50.0668%,
+      rgba(15, 12, 11, 0) 91.3058%
+    );
   }
 
   /* Heading Text */
@@ -190,12 +205,24 @@
 
   /* Pricing Cards */
   .pricing-pro-icon-bg {
-    background: radial-gradient(50% 50% at 50% 50%, rgb(40, 39, 42) 0%, rgb(23, 23, 25) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(40, 39, 42) 0%,
+      rgb(23, 23, 25) 100%
+    );
   }
   .pricing-team-icon-bg {
-    background: radial-gradient(50% 50% at 50% 50%, rgba(225, 251, 35, 0) 0%, rgba(214, 245, 25, 0.2) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(225, 251, 35, 0) 0%,
+      rgba(214, 245, 25, 0.2) 100%
+    );
   }
   .pricing-enterprise-icon-bg {
-    background: radial-gradient(50% 50% at 50% 50%, rgb(91, 108, 13) 0%, rgb(214, 245, 25) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(91, 108, 13) 0%,
+      rgb(214, 245, 25) 100%
+    );
   }
 }
