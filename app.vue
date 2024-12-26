@@ -22,6 +22,7 @@
   });
 
   const searchDialogOpen = ref(false);
+  const bannerDialogOpen = ref(true);
   const sidebarOpen = useState<boolean>("sidebarOpen", () => false);
   const route = useRoute();
   const isTemplateRoute = ref<boolean>(false);
@@ -166,5 +167,10 @@
     </div>
 
     <SearchDialog v-model="searchDialogOpen" />
+
+    <BannerDialog v-model="bannerDialogOpen">
+      Use <strong class="font-black text-black text-[18px]">WELCOME2025</strong>
+      at checkout to get 50% OFF on all products and the All Access Pass! 🚀
+    </BannerDialog>
   </div>
 </template>

@@ -74,9 +74,7 @@
       <div
         class="flex flex-row justify-start items-center flex-nowrap gap-[8px]"
       >
-        <span class="body-2 text-zing-500 capitalize">{{
-          template.category
-        }}</span>
+        <span class="body-2 text-zing-500">{{ template.category }}</span>
       </div>
     </div>
   </NuxtLink>

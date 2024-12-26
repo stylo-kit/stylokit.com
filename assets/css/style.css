@@ -225,4 +225,26 @@
       rgb(214, 245, 25) 100%
     );
   }
+
+  /* Banner */
+  .banner-bg {
+    background: #fafde5;
+  }
+  .banner-border {
+    border: 1px solid #d6f85c;
+    border-radius: 8px;
+  }
+  .banner-shadow {
+    box-shadow: 0 2px 4px -2px rgba(125, 172, 7, 0.2),
+      0 4px 8px -2px rgba(125, 172, 7, 0.3);
+  }
+  .banner-text-color {
+    color: #253901;
+  }
+  .banner-icon-text-color {
+    color: rgb(149, 181, 0);
+  }
+  .banner-icon-text-hover {
+    color: rgb(89, 108, 8);
+  }
 }
