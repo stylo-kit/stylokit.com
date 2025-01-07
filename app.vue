@@ -22,7 +22,7 @@
   });
 
   const searchDialogOpen = ref(false);
-  const bannerDialogOpen = ref(true);
+  const bannerDialogOpen = ref(false);
   const sidebarOpen = useState<boolean>("sidebarOpen", () => false);
   const route = useRoute();
   const isTemplateRoute = ref<boolean>(false);
