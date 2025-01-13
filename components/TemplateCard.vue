@@ -14,13 +14,13 @@
     class="flex flex-col relative group gap-[12px]"
   >
     <div
-      class="relative transition group-hover:-translate-y-1 duration-300 w-full h-[208px] md:h-auto overflow-hidden"
+      class="relative grow transition group-hover:-translate-y-1 duration-300 w-full h-[208px] md:h-auto overflow-hidden"
     >
       <img
         v-if="template.thumbImage"
         :src="template.thumbImage"
         alt="Image"
-        class="w-full h-[208px] md:h-auto object-cover object-center rounded-md border border-white/10"
+        class="w-full h-[208px] md:h-full object-cover object-center rounded-md border border-white/10"
       />
       <div
         @click="
