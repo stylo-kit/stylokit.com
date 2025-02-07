@@ -59,7 +59,7 @@ export default defineAppConfig({
         link: "https://x.com/Dmytri_Design",
       },
       developer: {
-        display: "none",
+        display: "block",
         handle: "@acep_mon",
         link: "https://x.com/acep_mon",
       },
