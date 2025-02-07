@@ -60,8 +60,8 @@ export default defineAppConfig({
       },
       developer: {
         display: "block",
-        handle: "@acep_mon",
-        link: "https://x.com/acep_mon",
+        handle: "@tsogtoodev",
+        link: "https://x.com/tsogtoodev",
       },
     },
 
