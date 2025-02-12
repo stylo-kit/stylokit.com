@@ -30,7 +30,7 @@
           </div>
         </SidebarContent>
       </SidebarBody>
-      <SidebarFooter>© 2024 Made by Dmytri</SidebarFooter>
+      <SidebarFooter>© 2025 Made by Dmytri</SidebarFooter>
     </Sidebar>
 
     <div class="grow overflow-y-auto p-2 pl-0">
