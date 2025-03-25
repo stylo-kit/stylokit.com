@@ -23,7 +23,7 @@
         class="w-full h-[208px] md:h-full object-cover object-center rounded-md border border-white/10"
       />
       <div
-        @click="
+        @click.prevent="
           navigateTo(template.previewLink, {
             external: true,
             open: {

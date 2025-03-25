@@ -24,9 +24,9 @@ const props = defineProps({
 });
 
 const buttonClass = ref({
-  'gap-1.5 px-3.5 py-1 body-2 font-semibold': props.size == 'sm' && props.variant != 'link',
-  'gap-2 px-4 py-1.5 heading-6 font-semibold': props.size == 'md' && props.variant != 'link',
-  'gap-2 px-5 py-2.5 heading-6 font-semibold': props.size == 'lg' && props.variant != 'link',
+  'gap-1.5 px-3.5 py-1 body-2': props.size == 'sm' && props.variant != 'link',
+  'gap-2 px-4 py-1.5 heading-6': props.size == 'md' && props.variant != 'link',
+  'gap-2 px-5 py-2.5 heading-6': props.size == 'lg' && props.variant != 'link',
 
   'bg-brand-4 text-inverse button-primary-shadow hover:bg-brand-5': props.variant == 'primary',
   'bg-white/[.01] text-primary button-secondary-shadow hover:bg-alpha-5': props.variant == 'secondary',

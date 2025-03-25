@@ -8,6 +8,8 @@
 
 html {
   font-family: "Instrument Sans", "Roboto", "SF Pro Display Regular", "SF Pro Display Regular Placeholder", "-apple-system", "BlinkMacSystemFont", sans-serif;
+  font-style: normal;
+  font-weight: 500;
 }
 
 :root {
