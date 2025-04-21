@@ -59,7 +59,7 @@ export default defineAppConfig({
         link: "https://x.com/Dmytri_Design",
       },
       developer: {
-        display: "block",
+        display: "none",
         handle: "@tsogtoodev",
         link: "https://x.com/tsogtoodev",
       },
